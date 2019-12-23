@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n crispy_forms_tags %}
+
+{% block body_content %}
+<div class="row content">
+  <div class="col-md-12">
+    <form action="/create_fsc_batch/" class="form-horizontal" role="form" id="form-entry_checklist">{% csrf_token %}
+      {% crispy checklist_form %}
+      <input type="submit" class="btn btn-primary" value="submit" id="btn_save_data"/>
+      <input type="submit" class="btn btn-primary" value="Send Mail" id="btn_send_mail"/>
+      <br>
+    </form>
+  </div>
+</div>
+{% endblock %}
